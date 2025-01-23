@@ -123,7 +123,7 @@ resource "aws_ec2_transit_gateway_route_table_association" "spoke_tgw_vpc" {
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.spoke_route_table.id
   provider = aws.new_york
 }
-# Associate Spoke TGW Route Table with New York perring Attachment
+# Associate Spoke TGW Route Table with New York Peering Attachment
 resource "aws_ec2_transit_gateway_route_table_association" "tgw_attachment_association" {
   transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.hub_to_spoke.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.spoke_route_table.id

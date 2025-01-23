@@ -94,12 +94,7 @@ resource "aws_route_table" "tokyo_route_table_private_subnet" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_nat_gateway.tokyo_nat.id
   }
-/*
-  route {
-    cidr_block = "10.231.0.0/16"
-    gateway_id = aws_ec2_transit_gateway.peer.id
-  }
-*/
+
   route {
     cidr_block = "10.71.0.0/16"
     gateway_id = aws_ec2_transit_gateway.peer.id
@@ -287,24 +282,3 @@ resource "aws_autoscaling_group" "tokyo_ec2_asg" {
 
   health_check_type = "EC2"
 }
-/*
-// TGW
-resource "aws_ec2_transit_gateway" "tokyo-TGW" {
-  description = "tokyo-TGW"
-  provider    = aws.tokyo
-
-  tags = {
-    Name     = "tokyo-TGW"
-    Service  = "TGW"
-    Location = "tokyo"
-  }
-}
-
-// VPC Attachment
-resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo-TGW-attachment" {
-  subnet_ids         = aws_subnet.public_subnet_Tokyo[*].id
-  transit_gateway_id = aws_ec2_transit_gateway.tokyo-TGW.id
-  vpc_id             = aws_vpc.tokyo.id
-  provider           = aws.tokyo
-}
-*/

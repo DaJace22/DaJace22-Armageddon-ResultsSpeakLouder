@@ -262,24 +262,4 @@ resource "aws_autoscaling_group" "london_ec2_asg" {
 
   health_check_type = "EC2"
 }
-/*
-// TGW
-resource "aws_ec2_transit_gateway" "london-TGW" {
-  description = "london-TGW"
-  provider    = aws.london
 
-  tags = {
-    Name     = "london-TGW"
-    Service  = "TGW"
-    Location = "london"
-  }
-}
-
-// VPC Attachment
-resource "aws_ec2_transit_gateway_vpc_attachment" "london-TGW-attachment" {
-  subnet_ids         = aws_subnet.public_subnet_london[*].id
-  transit_gateway_id = aws_ec2_transit_gateway.london-TGW.id
-  vpc_id             = aws_vpc.london.id
-  provider           = aws.london
-}
-*/

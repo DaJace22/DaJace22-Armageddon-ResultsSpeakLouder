@@ -261,25 +261,4 @@ resource "aws_autoscaling_group" "hong_kong_ec2_asg" {
   }
 
   health_check_type = "EC2"
-}
-/*
-// TGW
-resource "aws_ec2_transit_gateway" "hong_kong-TGW" {
-  description = "hong_kong-TGW"
-  provider    = aws.hong_kong
 
-  tags = {
-    Name     = "hong_kong-TGW"
-    Service  = "TGW"
-    Location = "hong_kong"
-  }
-}
-
-// VPC Attachment
-resource "aws_ec2_transit_gateway_vpc_attachment" "hong_kong-TGW-attachment" {
-  subnet_ids         = aws_subnet.public_subnet_HK[*].id
-  transit_gateway_id = aws_ec2_transit_gateway.hong_kong-TGW.id
-  vpc_id             = aws_vpc.hong_kong.id
-  provider           = aws.hong_kong
-}
-*/

@@ -262,24 +262,4 @@ resource "aws_autoscaling_group" "new_york_ec2_asg" {
 
   health_check_type = "EC2"
 }
-/*
-// TGW
-resource "aws_ec2_transit_gateway" "new_york-TGW" {
-  description = "new_york-TGW"
-  provider    = aws.new_york
 
-  tags = {
-    Name     = "new_york-TGW"
-    Service  = "TGW"
-    Location = "new_york"
-  }
-}
-
-// VPC Attachment
-resource "aws_ec2_transit_gateway_vpc_attachment" "new_york-TGW-attachment" {
-  subnet_ids         = aws_subnet.public_subnet_NY[*].id
-  transit_gateway_id = aws_ec2_transit_gateway.new_york-TGW.id
-  vpc_id             = aws_vpc.new_york.id
-  provider           = aws.new_york
-}
-*/

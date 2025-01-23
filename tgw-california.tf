@@ -92,7 +92,7 @@ resource "aws_ec2_transit_gateway_route_table_association" "spoke_tgw_vpc_califo
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.spoke_route_table_california.id
   provider = aws.california
 }
-# Associate Spoke TGW Route Table with New York perring Attachment
+# Associate Spoke TGW Route Table with New York Peering Attachment
 resource "aws_ec2_transit_gateway_route_table_association" "tgw_attachment_association_california" {
   transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.hub_to_spoke_california.id
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.spoke_route_table_california.id

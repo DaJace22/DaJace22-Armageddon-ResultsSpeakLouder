@@ -26,7 +26,7 @@ resource "aws_subnet" "private-security-zone" {
 resource "aws_subnet" "public-security-zone" { 
   vpc_id            = aws_vpc.security_zone.id
   cidr_block        = "10.77.1.0/24"
-  availability_zone = "ap-northeast-1a" #Change to your AZ
+  availability_zone = "ap-northeast-1a" 
   map_public_ip_on_launch = true
   provider = aws.tokyo
 
@@ -153,7 +153,7 @@ resource "aws_iam_role_policy" "siem_policy" {
 resource "aws_instance" "SIEM_Server" {
   ami                         = "ami-08f52b2e87cebadd9"
   instance_type               = "t3.medium"
-  key_name                    = "ArmageddonAttempt1_12JAN25" # Replace with your own key
+  key_name                    = "ArmageddonInTokyo" # Replace with your own key
   subnet_id                   = aws_subnet.private-security-zone.id
   vpc_security_group_ids      = [aws_security_group.SIEM_SG.id]
   iam_instance_profile        = aws_iam_instance_profile.siem_profile.id
@@ -219,7 +219,7 @@ provider = aws.tokyo
 resource "aws_instance" "Bastion_Host" {
   ami                         = "ami-08f52b2e87cebadd9"
   instance_type               = "t2.micro"
-  key_name                    = "ArmageddonAttempt1_12JAN25" # Replace with your own key
+  key_name                    = "ArmageddonInTokyo" # Replace with your own key
   subnet_id                   = aws_subnet.public-security-zone.id
   vpc_security_group_ids      = [aws_security_group.Bastion_instance.id]
 provider = aws.tokyo

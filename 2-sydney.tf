@@ -262,24 +262,3 @@ resource "aws_autoscaling_group" "sydney_ec2_asg" {
 
   health_check_type = "EC2"
 }
-/*
-// TGW
-resource "aws_ec2_transit_gateway" "sydney-TGW" {
-  description = "sydney-TGW"
-  provider    = aws.sydney
-
-  tags = {
-    Name     = "sydney-TGW"
-    Service  = "TGW"
-    Location = "sydney"
-  }
-}
-
-// VPC Attachment
-resource "aws_ec2_transit_gateway_vpc_attachment" "sydney-TGW-attachment" {
-  subnet_ids         = aws_subnet.public_subnet_sydney[*].id
-  transit_gateway_id = aws_ec2_transit_gateway.sydney-TGW.id
-  vpc_id             = aws_vpc.sydney.id
-  provider           = aws.sydney
-}
-*/
