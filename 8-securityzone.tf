@@ -284,18 +284,4 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "local_siem_attachment" {
 
 
 
-/*
-Read Me 
-------------------------------UPDATE WITH THE CORRECT IP ADDRESSES AND KEYS--------------------------------
-Bastion commands
-eval "$(ssh-agent -s)"
-ssh-add Siem.pem --- Use the correct Key here for your bastion agent
-ssh -A -i Siem.pem ec2-user@54.85.15.178
-ssh ec2-user@10.230.0.205
 
-From a new Terminal 
-ssh -i Siem.pem -L 3000:10.230.0.205:3000 ec2-user@54.85.15.178 (ssh -i Siem.pem -L <Private IP SIEM SERVER>:3000 ec2-user@<Bastion Host PUB IP>)
-Leave that new Terminal window open and
-goto http://localhost:3000 in your browser
-
-*/
