@@ -89,14 +89,15 @@ terraform validate
 
 ### Step 5: Preview the Plan for Infrastructure Set up
 ```bash
-terraform plan -autoapprove
+terraform plan -auto-approve
 ```
 
 #### Step 6: Deploy the Infrastructure 
 ```bash
-terraform apply -autoapprove
+terraform apply -auto-approve
 ```
-# Note: During the deployment of the infrastructure, you may encounter an error regarding a resource being in and "invalid state". We are still investigating a programmatic solution. In the interim type terraform apply -autoapprove again to complete the remainder of the deployment.
+### Note: During the deplowyment of infrastructure, you may encounter an error regarding a resource being in an "invalid state".  We are still investigating a solution. In the interim type terraform apply -auto-approve again to complete the remainder of the deployment.
+
 <img width="588" alt="Invalid State Error" src="https://github.com/user-attachments/assets/cd4e2cb4-002e-49b7-b323-758047801983" />
 
 
