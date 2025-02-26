@@ -170,7 +170,7 @@ resource "aws_security_group" "hong_kong_ec2_sg" {
 
 // Load Balancer
 resource "aws_lb" "hong_kong_alb" {
-  name                       = "hong_kong-load-balancer"
+  name                       = "hong-kong-load-balancer"
   load_balancer_type         = "application"
   internal                   = false
   subnets                    = aws_subnet.public_subnet_HK[*].id
@@ -186,7 +186,7 @@ resource "aws_lb" "hong_kong_alb" {
 
 // Target Group
 resource "aws_lb_target_group" "hong_kong-tg" {
-  name        = "hong_kong-tg"
+  name        = "hong-kong-tg"
   port        = 80
   protocol    = "HTTP"
   vpc_id      = aws_vpc.hong_kong.id
@@ -261,4 +261,4 @@ resource "aws_autoscaling_group" "hong_kong_ec2_asg" {
   }
 
   health_check_type = "EC2"
-  }
+}
