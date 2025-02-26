@@ -18,7 +18,7 @@ resource "aws_rds_cluster" "aurora_cluster" {
   engine                  = "aurora-postgresql"
   database_name           = "TeleMedicinedb"
   master_username         = "ResultsSpeakLouderMasterUser"
-  master_password         = "5uperDuperP@55w0rd"
+  master_password         = "5uperDuperP-55w0rd"
   backup_retention_period = 7
   preferred_backup_window = "05:00-07:00"
   skip_final_snapshot     = true
