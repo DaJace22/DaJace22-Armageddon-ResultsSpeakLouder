@@ -261,4 +261,4 @@ resource "aws_autoscaling_group" "hong_kong_ec2_asg" {
   }
 
   health_check_type = "EC2"
-
+  }
